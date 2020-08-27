@@ -26,35 +26,33 @@ To install the API Portal software in unattended mode:
 
     The following describes the script options used in this example:
 
-    * `--apache-without-php`: Accepts yY/nN. Flag indicating whether user wants to continue when PHP could not be detected in Apache.
-    * `--mysql-ssl`: Accepts yY/nN. Flag indicating whether to use MySQL in SSL mode.
-    * `--mysql-ssl-method`: Accepts 1 (one-way authentication) or 2 (two-way authentication). Indicates the method used when SSL mode for MySQL is wanted.
-    * `--install-path`: The install path for API Portal. Example: `/opt/axway/apiportal/htdoc`
+    * `--apache-without-php`: Accepts yY/nN. Indicates whether to continue when PHP could not be detected in Apache.
+    * `--mysql-ssl`: Accepts yY/nN. Indicates whether to use MySQL in SSL mode.
+    * `--mysql-ssl-method`: Indicates the method used when SSL mode for MySQL is wanted. Accepts `1` (one-way authentication) or `2` (two-way authentication).
+    * `--install-path`: The install path for API Portal. Example: `/opt/axway/apiportal/htdoc`.
     * `--mysql-database`: The database to use for API Portal.  
     * `--mysql-host`: Database host.
     * `--mysql-port`: Database port. Example: `3306`.
     * `--mysql-username`: Database user.
     * `--mysql-password`: Database password.
-    * `--mysql-encrypt-password`: Accepts yY/nN. Flag indicating whether DB password to be stored encrypted or not.
-    * `--mysql-password-passphrase`: Passphrase to be used to encrypt and decrypt database password. Used when --mysql-encrypt-password is set to yY. 
-    * `--weak-mysql-password`: Accepts yY/nN. Flag indicating whether installation should continue when MySQL password is weak.
-    * `--ha-instance`        : Accepts yY/nN. Flag indicating whether to use HA setup. Use only for instances that are not initial. For the initial instance use the     `--initial-ha-instance` option.
-    * `--initial-ha-instance`: Accepts yY/nN. Flag indicating whether this is the initial instance for HA setup.
+    * `--mysql-encrypt-password`: Accepts yY/nN. Indicates whether to stored the DB password encrypted.
+    * `--mysql-password-passphrase`: Passphrase to be used to encrypt and decrypt database password. Used when `--mysql-encrypt-password` is set to yY.
+    * `--weak-mysql-password`: Accepts yY/nN. Indicates whether installation should continue when MySQL password is weak.
+    * `--ha-instance`        : Accepts yY/nN. Indicates whether to use HA setup. Use only for instances that are not initial. For the initial instance use the `--initial-ha-instance` option.
+    * `--initial-ha-instance`: Accepts yY/nN. Indicates whether this is the initial instance for HA setup.
     * `--php-ini`            : The directory where `php.ini` file is located. Example: `/etc`.
     * `--apache-config`      : The directory where the Apache configuration files are located. Example: `/etc/httpd/conf.d`.
-    * `--use-encryption-key` : Accepts yY/nN. Flag indicating whether to use an encryption key. This option is required for public API mode.
-    * `--encryption-key`     : The place where the encryption key is stored. Example: `/home/encryption/key`. The last segment is the file name (in this example it is called `key`). Used when --use-encryption-key is set to yY.
-    * `--use-ssl`            : Accepts yY/nN. Flag indicating whether API Portal will be served by SSL.
-    * `--ssl-type`           : Accepts 1 (use custom certificate and private key) or 2 (use self-signed certificate). Indicates what SSL type to use.
-    * `--ssl-certificate`    : Path to the SSL certificate. Used when option 1 SSL type is selected.
-    * `--private-key`        : Path to the private key. Used when option 1 SSL type is selected.
-    * `--private-key-passphrase`: The passphrase of the private key. Used when option 1 SSL type is selected and the private key has passphrase.
-    * `--passphrase-path`: The place where passphrase will be stored. The last segment will be the filename where the passphrase will be stored. 
-                           That file is needed to setup Apache to start silently (without asking for passphrase). Used when option 1 SSL type is
-                           selected and the private key has passphrase.
-    * `--hostname`: The hostname of API Portal. Used when option 1 SSL type is selected.
-    * `--restart-apache`: Accepts yY/nN. Flag indicating whether Apache restart is wanted after installation (when the apache service could be correctly detected; otherwise                               manual restart of Apache is required).
-       
+    * `--use-encryption-key` : Accepts yY/nN. Indicates whether to use an encryption key. This option is required for public API mode.
+    * `--encryption-key`     : Directory where the encryption key is stored. Example: `/home/encryption/key`. The last segment is the file name (in this example it is called `key`). Used when `--use-encryption-key` is set to yY.
+    * `--use-ssl`            : Accepts yY/nN. Indicates whether API Portal will be served by SSL.
+    * `--ssl-type`           : Indicates what SSL type to use. Accepts `1` (use custom certificate and private key) or `2` (use self-signed certificate).
+    * `--ssl-certificate`    : Path to the SSL certificate. Used when SSL type `1` is selected.
+    * `--private-key`        : Path to the private key. Used when SSL type `1` is selected.
+    * `--private-key-passphrase`: The passphrase of the private key. Used when SSL type `1` is selected and the private key has passphrase.
+    * `--passphrase-path`: Directory where the passphrase will be stored. The last segment will be the filename where the passphrase will be stored. The file is required to setup Apache to start silently (without asking for passphrase). Used when SSL type `1` is selected and the private key has passphrase.
+    * `--hostname`: The hostname of API Portal. Used when SSL type `1` is selected.
+    * `--restart-apache`: Accepts yY/nN. Indicates whether Apache restart is wanted after installation (when the apache service could be correctly detected; otherwise manual restart of Apache is required).
+
 To see the complete list of options that you can use during the installation, run the following command:
 
 ```
