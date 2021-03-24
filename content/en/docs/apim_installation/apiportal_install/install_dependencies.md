@@ -5,7 +5,6 @@
   "date": "2019-08-09",
   "description": "The API Portal installation script does not install specific dependencies (such as Apache HTTP server and PHP) that are required by API Portal, so you must install these dependencies yourself before you install API Portal."
 }
-
 ## Install dependencies from RedHat Software Collections (RHSCL) on RHEL 7
 
 On a Red Hat Enterprise Linux (RHEL7) installation, the default PHP version available in the official repository is 5.4. However, API Portal only supports PHP 7.1+. You can use RedHat Software Collections (RHSCL) to install PHP 7.1+.
@@ -33,6 +32,7 @@ sudo yum clean all
    source /etc/profile.d/scl-httpd24.sh
    sudo ln -s $(which httpd) /usr/bin/httpd
    ```
+If `/usr/bin/httpd` already exists, please rename it and execute `sudo ln -s $(which httpd) /usr/bin/httpd` again.
 3. Verify Apache is now available:
 
    ```bash
@@ -48,7 +48,6 @@ sudo yum clean all
    ```bash
    systemctl status httpd24-httpd
    ```
-
 ### Install PHP on RHEL7
 
 You must install the latest PHP version provided by the RHSCL.
@@ -65,6 +64,8 @@ You must install the latest PHP version provided by the RHSCL.
    source /etc/profile.d/scl-rh-php73.sh
    sudo ln -s $(which php) /usr/bin/php
    ```
+If `/usr/bin/php` already exists, please rename it and execute `sudo ln -s $(which php) /usr/bin/php` again.
+
 3. Verify that PHP is available:
 
    ```bash
@@ -81,10 +82,6 @@ You must install the latest PHP version provided by the RHSCL.
    sudo systemctl restart httpd24-httpd
    systemctl status httpd24-httpd
    ```
-
-### Upgrade PHP
-
-If you already have PHP 5.4 or earlier and API Portal 7.7 or earlier installed, you cannot uninstall the old PHP version due to a dependency in API Portal. Perform the steps in [Install PHP on RHEL7](#install-php-on-rhel7) and leave the old PHP version installed. If there is already a symbolic link to the old PHP version, update it with the new location of PHP (for example, using `ln -sf` instead of `ln -s`).
 
 ## Install dependencies from community repository EPEL with Remi for RHEL 8 and CentOS 7/8
 
