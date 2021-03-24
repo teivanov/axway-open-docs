@@ -32,7 +32,8 @@ sudo yum clean all
    source /etc/profile.d/scl-httpd24.sh
    sudo ln -s $(which httpd) /usr/bin/httpd
    ```
-If `/usr/bin/httpd` already exists, please rename it and execute `sudo ln -s $(which httpd) /usr/bin/httpd` again.
+   If `/usr/bin/httpd` already exists, please rename it and execute `sudo ln -s     $(which httpd) /usr/bin/httpd` again.
+
 3. Verify Apache is now available:
 
    ```bash
@@ -64,7 +65,7 @@ You must install the latest PHP version provided by the RHSCL.
    source /etc/profile.d/scl-rh-php73.sh
    sudo ln -s $(which php) /usr/bin/php
    ```
-If `/usr/bin/php` already exists, please rename it and execute `sudo ln -s $(which php) /usr/bin/php` again.
+   If `/usr/bin/php` already exists, please rename it and execute `sudo ln -s $(which php) /usr/bin/php` again.
 
 3. Verify that PHP is available:
 
